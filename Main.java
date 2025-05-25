@@ -1,12 +1,9 @@
-import java.util.Arrays;
-
-import static array.ArrayEasy.twoSum;
+import static array.ArrayEasy.removeDuplicates;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {3, 3};
-        int target = 6;
+        int[] arr1 = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
 
-        System.out.println(Arrays.toString(twoSum(arr1, target)));
+        System.out.println(removeDuplicates(arr1));
     }
 }
