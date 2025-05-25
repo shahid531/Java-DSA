@@ -1,9 +1,9 @@
-import static array.ArrayEasy.moveZeroes;
+import static array.ArrayEasy.containsDuplicate;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {0};
+        int[] arr1 = {1, 1, 1, 3, 3, 4, 3, 2, 4, 2};
 
-        moveZeroes(arr1);
+        System.out.println(containsDuplicate(arr1));
     }
 }

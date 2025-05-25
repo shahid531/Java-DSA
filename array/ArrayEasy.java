@@ -68,6 +68,19 @@ public class ArrayEasy {
         System.out.println(Arrays.toString(nums));
     }
 
+    // https://leetcode.com/problems/contains-duplicate/
+    public static boolean containsDuplicate(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // https://leetcode.com/problems/plus-one/description/
     public static int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i--) {
             if (digits[i] < 9) {
