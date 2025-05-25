@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class ArrayEasy {
 
+    // https://leetcode.com/problems/two-sum/description/
     public static int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -15,6 +16,7 @@ public class ArrayEasy {
         return new int[]{};
     }
 
+    // https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
     public static int removeDuplicates(int[] nums) {
         int count = 1;
         for (int i = 0; i < nums.length; i++) {
@@ -25,6 +27,20 @@ public class ArrayEasy {
         }
         System.out.println(Arrays.toString(nums));
         return count;
+    }
+
+    // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+    public static int maxProfit(int[] prices) {
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
+            } else {
+                maxProfit = Math.max(maxProfit, prices[i] - minPrice);
+            }
+        }
+        return maxProfit;
     }
 
     public static int[] plusOne(int[] digits) {

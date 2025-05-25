@@ -1,9 +1,9 @@
-import static array.ArrayEasy.removeDuplicates;
+import static array.ArrayEasy.maxProfit;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+        int[] arr1 = {7, 6, 4, 3, 1};
 
-        System.out.println(removeDuplicates(arr1));
+        System.out.println(maxProfit(arr1));
     }
 }
