@@ -80,6 +80,19 @@ public class ArrayEasy {
         return false;
     }
 
+    // https://leetcode.com/problems/maximum-subarray/
+    public static int maxSubArray(int[] nums) {
+        int maxCount = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            int count = 0;
+            for (int j = i; j < nums.length; j++) {
+                count += nums[j];
+                maxCount = Math.max(maxCount, count);
+            }
+        }
+        return maxCount;
+    }
+
     // https://leetcode.com/problems/plus-one/description/
     public static int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i--) {
