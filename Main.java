@@ -1,10 +1,9 @@
-import static array.ArrayEasy.rotate;
+import static array.ArrayEasy.moveZeroes;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {1, 2, 3, 4, 5, 6, 7};
-        int k = 3;
+        int[] arr1 = {0};
 
-        rotate(arr1, k);
+        moveZeroes(arr1);
     }
 }
