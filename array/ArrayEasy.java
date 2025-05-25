@@ -43,6 +43,19 @@ public class ArrayEasy {
         return maxProfit;
     }
 
+    // https://leetcode.com/problems/rotate-array/description/
+    public static void rotate(int[] nums, int k) {
+        for (int i = 0; i < k; i++) {
+            int last = nums[nums.length - 1];
+            for (int j = nums.length - 1; j > 0; j--) {
+                nums[j] = nums[j - 1];
+            }
+            nums[0] = last;
+        }
+
+        System.out.println(Arrays.toString(nums));
+    }
+
     public static int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i--) {
             if (digits[i] < 9) {
