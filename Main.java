@@ -1,9 +1,9 @@
-import static array.ArrayEasy.maxSubArray;
+import static array.ArrayEasy.singleNumber;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int[] arr1 = {1};
 
-        System.out.println(maxSubArray(arr1));
+        System.out.println(singleNumber(arr1));
     }
 }

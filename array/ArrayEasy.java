@@ -93,6 +93,15 @@ public class ArrayEasy {
         return maxCount;
     }
 
+    // https://leetcode.com/problems/single-number/
+    public static int singleNumber(int[] nums) {
+        int xor = 0;
+        for (int i = 0; i < nums.length; i++) {
+            xor ^= nums[i];
+        }
+        return xor;
+    }
+
     // https://leetcode.com/problems/plus-one/description/
     public static int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i--) {
