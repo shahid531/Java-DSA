@@ -1,6 +1,8 @@
 package array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayEasy {
 
@@ -113,6 +115,24 @@ public class ArrayEasy {
         }
         int[] result = new int[digits.length + 1];
         result[0] = 1;
+        return result;
+    }
+
+    // https://leetcode.com/problems/intersection-of-two-arrays-ii/
+    public static int[] intersect(int[] nums1, int[] nums2) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < nums1.length; i++) {
+            for (int j = 0; j < nums2.length; j++) {
+                if (nums1[i] == nums2[j]) {
+                    list.add(nums1[i]);
+                    break;
+                }
+            }
+        }
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i);
+        }
         return result;
     }
 }
