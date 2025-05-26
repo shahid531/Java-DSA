@@ -1,12 +1,11 @@
 import java.util.Arrays;
 
-import static array.ArrayEasy.intersect;
+import static array.ArrayMedium.productExceptSelf;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {4, 9, 5};
-        int[] arr2 = {9, 4, 9, 8, 4};
+        int[] arr1 = {-1, 1, 0, -3, 3};
 
-        System.out.println(Arrays.toString(intersect(arr1, arr2)));
+        System.out.println(Arrays.toString(productExceptSelf(arr1)));
     }
 }
