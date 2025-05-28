@@ -72,4 +72,36 @@ public class ArrayMedium {
         }
         return duplicate;
     }
+
+    // https://leetcode.com/problems/set-matrix-zeroes/
+    public static void setZeroes(int[][] matrix) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        boolean[] zeroRow = new boolean[rows];
+        boolean[] zeroCols = new boolean[cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] == 0) {
+                    zeroRow[i] = true;
+                    zeroCols[j] = true;
+                }
+            }
+        }
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (zeroRow[i] || zeroCols[j]) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int val : row) {
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
+    }
 }

@@ -1,8 +1,10 @@
-import static array.ArrayMedium.findDuplicates;
+import static array.ArrayMedium.printMatrix;
+import static array.ArrayMedium.setZeroes;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {4, 3, 2, 7, 8, 2, 3, 1};
-        System.out.println(findDuplicates(arr1));
+        int[][] arr1 = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
+        setZeroes(arr1);
+        printMatrix(arr1);
     }
 }
