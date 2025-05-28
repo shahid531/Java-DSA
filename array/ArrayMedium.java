@@ -1,6 +1,8 @@
 package array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayMedium {
 
@@ -51,5 +53,23 @@ public class ArrayMedium {
             }
         }
         return result;
+    }
+
+    // https://leetcode.com/problems/find-all-duplicates-in-an-array/description/
+    public static List<Integer> findDuplicates(int[] nums) {
+        List<Integer> duplicate = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (duplicate.contains(nums[i])) continue;
+            int count = 0;
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    count++;
+                }
+            }
+            if (count > 1) {
+                duplicate.add(nums[i]);
+            }
+        }
+        return duplicate;
     }
 }
