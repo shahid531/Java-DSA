@@ -1,9 +1,13 @@
+import java.util.List;
+
 import static array.ArrayMedium.*;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {1, 2, 3};
-        int k = 3;
-        System.out.println(subarraySum(arr1, k));
+        int[] arr1 = {0, 0, 0};
+        List<List<Integer>> result = threeSum(arr1);
+        for (List<Integer> li : result) {
+            System.out.println(li);
+        }
     }
 }
