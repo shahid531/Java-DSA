@@ -1,10 +1,9 @@
-import static array.ArrayMedium.printMatrix;
-import static array.ArrayMedium.setZeroes;
+import static array.ArrayMedium.*;
 
 public class Main {
     public static void main(String[] args) {
-        int[][] arr1 = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
-        setZeroes(arr1);
-        printMatrix(arr1);
+        int[] arr1 = {1, 2, 3};
+        int k = 3;
+        System.out.println(subarraySum(arr1, k));
     }
 }

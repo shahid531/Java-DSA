@@ -104,4 +104,19 @@ public class ArrayMedium {
             System.out.println();
         }
     }
+
+    // https://leetcode.com/problems/subarray-sum-equals-k/description/
+    public static int subarraySum(int[] nums, int k) {
+        int countData = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int count = 0;
+            for (int j = i; j < nums.length; j++) {
+                count += nums[j];
+                if (count == k) {
+                    countData++;
+                }
+            }
+        }
+        return countData;
+    }
 }
