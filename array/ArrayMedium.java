@@ -196,4 +196,31 @@ public class ArrayMedium {
         return minLen == Integer.MAX_VALUE ? 0 : minLen;
     }
 
+    // https://leetcode.com/problems/search-in-rotated-sorted-array/description/
+    public static int search(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    // TIME O(log n) SPACE O(1)
+    public static int searchB(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (nums[mid] == target) return mid;
+            else if (nums[mid] < target) left = mid + 1;
+            else right = mid - 1;
+        }
+
+        return -1;
+    }
+
+
 }
