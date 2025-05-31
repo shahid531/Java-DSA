@@ -160,4 +160,21 @@ public class ArrayMedium {
             nums[index++] = 2;
         }
     }
+
+    // https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+    public static int lengthOfLongestSubstring(String s) {
+        int longestLength = 0;
+        for (int i = 0; i < s.length(); i++) {
+            List<Character> record = new ArrayList<>();
+            for (int j = i; j < s.length(); j++) {
+                if (record.contains(s.charAt(j))) {
+                    break;
+                }
+                record.add(s.charAt(j));
+                longestLength = Math.max(longestLength, record.size());
+            }
+
+        }
+        return longestLength;
+    }
 }
