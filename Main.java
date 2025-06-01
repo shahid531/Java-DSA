@@ -1,9 +1,9 @@
-import static array.ArrayMedium.*;
+import static string.StringEasy.isAnagram;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {4, 5, 6, 7, 0, 1, 2};
-        int target = 0;
-        System.out.println(search(arr1, target));
+        String s = "rat";
+        String t = "car";
+        System.out.println(isAnagram(s,t));
     }
 }

@@ -221,6 +221,4 @@ public class ArrayMedium {
 
         return -1;
     }
-
-
 }
