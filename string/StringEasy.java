@@ -11,8 +11,26 @@ public class StringEasy {
         String[] s2 = t.split("");
         Arrays.sort(s1);
         Arrays.sort(s2);
-        String out1 = String.join("",s1);
-        String out2 = String.join("",s2);
+        String out1 = String.join("", s1);
+        String out2 = String.join("", s2);
         return out1.equals(out2);
+    }
+
+    // https://leetcode.com/problems/valid-palindrome/description/
+    public static boolean isPalindrome(String s) {
+        s = s.toLowerCase();
+        StringBuilder builder1 = new StringBuilder();
+        StringBuilder builder2 = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            if (Character.isLetterOrDigit(s.charAt(i))) {
+                builder1.append(s.charAt(i));
+            }
+        }
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (Character.isLetterOrDigit(s.charAt(i))) {
+                builder2.append(s.charAt(i));
+            }
+        }
+        return builder1.toString().contentEquals(builder2);
     }
 }

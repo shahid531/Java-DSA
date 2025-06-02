@@ -1,9 +1,9 @@
-import static string.StringEasy.isAnagram;
+import static string.StringEasy.isPalindrome;
 
 public class Main {
     public static void main(String[] args) {
-        String s = "rat";
+        String s = "0P";
         String t = "car";
-        System.out.println(isAnagram(s,t));
+        System.out.println(isPalindrome(s));
     }
 }
