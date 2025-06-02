@@ -33,4 +33,13 @@ public class StringEasy {
         }
         return builder1.toString().contentEquals(builder2);
     }
+
+    // https://leetcode.com/problems/reverse-string/description/
+    public static void reverseString(char[] s) {
+        for (int i = 0; i < s.length / 2; i++) {
+            char temp = s[s.length - i - 1];
+            s[s.length - i - 1] = s[i];
+            s[i] = temp;
+        }
+    }
 }
