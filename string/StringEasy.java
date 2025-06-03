@@ -42,4 +42,20 @@ public class StringEasy {
             s[i] = temp;
         }
     }
+
+    // https://leetcode.com/problems/first-unique-character-in-a-string/description/
+    public static int firstUniqChar(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            int count = 0;
+            for (int j = 0; j < s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j) && i != j) {
+                    count++;
+                }
+            }
+            if (count == 0) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
