@@ -1,9 +1,8 @@
-import static string.StringEasy.strStr;
+import static string.StringEasy.longestCommonPrefix;
 
 public class Main {
     public static void main(String[] args) {
-        String haystack = "sadbutsad";
-        String needle = "sad";
-        System.out.println(strStr(haystack,needle));
+        String[] str = {"flower", "flow", "flight"};
+        System.out.println(longestCommonPrefix(str));
     }
 }
