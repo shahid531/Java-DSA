@@ -1,8 +1,9 @@
-import static string.StringEasy.firstUniqChar;
+import static string.StringEasy.strStr;
 
 public class Main {
     public static void main(String[] args) {
-        String str = "leetcode";
-        System.out.println(firstUniqChar(str));
+        String haystack = "sadbutsad";
+        String needle = "sad";
+        System.out.println(strStr(haystack,needle));
     }
 }
