@@ -93,4 +93,18 @@ public class StringEasy {
         }
         return prefix;
     }
+
+    // https://leetcode.com/problems/to-lower-case/description/
+    public static String toLowerCase(String s) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch >= 'A' && ch <= 'Z') {
+                builder.append((char) (ch + 32));
+            } else {
+                builder.append(ch);
+            }
+        }
+        return builder.toString();
+    }
 }

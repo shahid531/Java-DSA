@@ -1,8 +1,8 @@
-import static string.StringEasy.longestCommonPrefix;
+import static string.StringEasy.toLowerCase;
 
 public class Main {
     public static void main(String[] args) {
-        String[] str = {"flower", "flow", "flight"};
-        System.out.println(longestCommonPrefix(str));
+        String str = "Hello";
+        System.out.println(toLowerCase(str));
     }
 }
