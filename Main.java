@@ -1,8 +1,8 @@
-import static string.StringEasy.toLowerCase;
+import static string.StringEasy.checkIfPangram;
 
 public class Main {
     public static void main(String[] args) {
-        String str = "Hello";
-        System.out.println(toLowerCase(str));
+        String str = "leetcode";
+        System.out.println(checkIfPangram(str));
     }
 }

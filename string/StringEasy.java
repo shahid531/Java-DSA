@@ -1,6 +1,8 @@
 package string;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class StringEasy {
 
@@ -106,5 +108,16 @@ public class StringEasy {
             }
         }
         return builder.toString();
+    }
+
+    // https://leetcode.com/problems/check-if-the-sentence-is-pangram/description/
+    public static boolean checkIfPangram(String sentence) {
+        sentence = sentence.toLowerCase();
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            if (sentence.indexOf(ch) == -1) {
+                return false;
+            }
+        }
+        return true;
     }
 }
