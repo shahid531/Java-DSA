@@ -120,4 +120,20 @@ public class StringEasy {
         }
         return true;
     }
+
+    // https://leetcode.com/problems/valid-parentheses/description/
+    public static boolean isValid(String s) {
+        if (s.length() % 2 != 0) return false;
+        boolean checked;
+        do {
+            checked = false;
+            int len = s.length();
+            s = s.replace("()", "").replace("{}", "").replace("[]", "");
+            if (s.length() != len) {
+                checked = true;
+            }
+        } while (checked);
+
+        return s.isEmpty();
+    }
 }
