@@ -1,9 +1,8 @@
-import static string.StringEasy.checkIfPangram;
-import static string.StringEasy.isValid;
+import static string.StringEasy.*;
 
 public class Main {
     public static void main(String[] args) {
-        String str = "(]";
-        System.out.println(isValid(str));
+        String str = "LVIII";
+        System.out.println(romanToInt(str));
     }
 }
