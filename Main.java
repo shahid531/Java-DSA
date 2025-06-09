@@ -1,8 +1,8 @@
-import static string.StringEasy.*;
+import static string.StringMedium.lengthOfLongestSubstring;
 
 public class Main {
     public static void main(String[] args) {
-        String str = "LVIII";
-        System.out.println(romanToInt(str));
+        String str = "abcabcbb";
+        System.out.println(lengthOfLongestSubstring(str));
     }
 }
