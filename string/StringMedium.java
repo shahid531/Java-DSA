@@ -24,4 +24,34 @@ public class StringMedium {
         return true;
     }
 
+    private static boolean isPalindrome(String str, int left, int right) {
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    // https://leetcode.com/problems/longest-palindromic-substring/description/
+    public static String longestPalindrome(String s) {
+        if (s == null || s.length() < 1) return "";
+
+        int maxLength = 0;
+        String longest = "";
+
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i; j < s.length(); j++) {
+                if (isPalindrome(s, i, j) && (j - i + 1 > maxLength)) {
+                    maxLength = j - i + 1;
+                    longest = s.substring(i, j + 1);
+                }
+            }
+        }
+
+        return longest;
+    }
+
 }
