@@ -1,9 +1,8 @@
-import static string.StringMedium.lengthOfLongestSubstring;
-import static string.StringMedium.longestPalindrome;
+import static string.StringMedium.*;
 
 public class Main {
     public static void main(String[] args) {
-        String str = "babad";
-        System.out.println(longestPalindrome(str));
+        String str = "words and 987";
+        System.out.println(myAtoi(str));
     }
 }
