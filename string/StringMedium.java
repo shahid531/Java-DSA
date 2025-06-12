@@ -1,5 +1,8 @@
 package string;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringMedium {
     public static int lengthOfLongestSubstring(String s) {
         int maxLength = 0;
@@ -54,6 +57,7 @@ public class StringMedium {
         return longest;
     }
 
+    // https://leetcode.com/problems/string-to-integer-atoi/description/
     public static int myAtoi(String s) {
         if (s == null || s.isEmpty()) return 0;
         int i = 0;
@@ -82,6 +86,49 @@ public class StringMedium {
         }
 
         return result * sign;
+    }
+
+    // https://leetcode.com/problems/group-anagrams/description/
+    public static List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> result = new ArrayList<>();
+        boolean[] visited = new boolean[strs.length];
+
+        for (int i = 0; i < strs.length; i++) {
+            if (visited[i]) continue;
+
+            List<String> group = new ArrayList<>();
+            group.add(strs[i]);
+            visited[i] = true;
+
+            for (int j = i + 1; j < strs.length; j++) {
+                if (!visited[j] && isAnagram(strs[i], strs[j])) {
+                    group.add(strs[j]);
+                    visited[j] = true;
+                }
+            }
+            result.add(group);
+        }
+
+        return result;
+    }
+
+    public static boolean isAnagram(String s1, String s2) {
+        if (s1.length() != s2.length()) return false;
+
+        int[] count = new int[26];
+        for (char c : s1.toCharArray()) {
+            count[c - 'a']++;
+        }
+
+        for (char c : s2.toCharArray()) {
+            count[c - 'a']--;
+        }
+
+        for (int c : count) {
+            if (c != 0) return false;
+        }
+
+        return true;
     }
 
 }
