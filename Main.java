@@ -1,14 +1,9 @@
-import java.util.List;
-
-import static string.StringMedium.*;
+import static string.StringMedium.convert;
 
 public class Main {
     public static void main(String[] args) {
-        String[] str = {"eat", "tea", "tan", "ate", "nat", "bat"};
-        List<List<String>> groups = groupAnagrams(str);
-
-        for (List<String> group : groups) {
-            System.out.println(group);
-        }
+        String str = "PAYPALISHIRING";
+        int numRows = 3;
+        System.out.println(convert(str, numRows));
     }
 }
