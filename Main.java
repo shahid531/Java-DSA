@@ -1,9 +1,11 @@
-import static string.StringMedium.convert;
+import java.util.Arrays;
+
+import static hashing.HashingEasy.twoSum;
 
 public class Main {
     public static void main(String[] args) {
-        String str = "PAYPALISHIRING";
-        int numRows = 3;
-        System.out.println(convert(str, numRows));
+        int[] arr1 = {2, 7, 11, 15};
+        int target = 9;
+        System.out.println(Arrays.toString(twoSum(arr1, target)));
     }
 }
