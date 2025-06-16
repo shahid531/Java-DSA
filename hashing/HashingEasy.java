@@ -1,7 +1,9 @@
 package hashing;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class HashingEasy {
     // https://leetcode.com/problems/two-sum/description/
@@ -35,5 +37,26 @@ public class HashingEasy {
         System.out.println(hashMap);
 
         return true;
+    }
+
+    public static int[] intersect(int[] nums1, int[] nums2) {
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < nums1.length; i++) {
+            hashMap.put(nums1[i], hashMap.getOrDefault(nums1[i], 0) + 1);
+        }
+
+        for (int i = 0; i < nums2.length; i++) {
+            if (hashMap.getOrDefault(nums2[i], 0) > 0) {
+                list.add(nums2[i]);
+                hashMap.put(nums2[i], hashMap.get(nums2[i]) - 1);
+            }
+        }
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i);
+        }
+        return result;
     }
 }
