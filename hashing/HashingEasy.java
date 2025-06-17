@@ -1,7 +1,6 @@
 package hashing;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -27,14 +26,11 @@ public class HashingEasy {
         for (char c : s.toCharArray()) {
             hashMap.put(c, hashMap.getOrDefault(c, 0) + 1);
         }
-        System.out.println(hashMap);
 
         for (char c : t.toCharArray()) {
             if (!hashMap.containsKey(c) || hashMap.get(c) == 0) return false;
             hashMap.put(c, hashMap.get(c) - 1);
         }
-
-        System.out.println(hashMap);
 
         return true;
     }
@@ -58,5 +54,19 @@ public class HashingEasy {
             result[i] = list.get(i);
         }
         return result;
+    }
+
+    public static int firstUniqChar(String s) {
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            hashMap.put(s.charAt(i), hashMap.getOrDefault(s.charAt(i), 0) + 1);
+        }
+        for (int i = 0; i < s.length(); i++) {
+            if (hashMap.get(s.charAt(i)) == 1) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
