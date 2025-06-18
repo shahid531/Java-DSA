@@ -2,6 +2,7 @@ package hashing;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class HashingEasy {
@@ -35,6 +36,7 @@ public class HashingEasy {
         return true;
     }
 
+    // https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
     public static int[] intersect(int[] nums1, int[] nums2) {
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         List<Integer> list = new ArrayList<>();
@@ -56,6 +58,7 @@ public class HashingEasy {
         return result;
     }
 
+    // https://leetcode.com/problems/first-unique-character-in-a-string/description/
     public static int firstUniqChar(String s) {
         HashMap<Character, Integer> hashMap = new HashMap<>();
 
@@ -68,5 +71,27 @@ public class HashingEasy {
             }
         }
         return -1;
+    }
+
+    // https://leetcode.com/problems/happy-number/description/
+    public static boolean isHappy(int n) {
+        HashSet<Integer> set = new HashSet<>();
+        while (n != 1) {
+            if (set.contains(n)) return false;
+
+            set.add(n);
+            n = sumOfDigitsSquares(n);
+        }
+        return true;
+    }
+
+    public static int sumOfDigitsSquares(int n) {
+        int sum = 0;
+        while (n > 0) {
+            int digit = n % 10;
+            sum += digit * digit;
+            n /= 10;
+        }
+        return sum;
     }
 }

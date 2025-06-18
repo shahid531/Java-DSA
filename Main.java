@@ -1,8 +1,8 @@
-import static hashing.HashingEasy.firstUniqChar;
+import static hashing.HashingEasy.isHappy;
 
 public class Main {
     public static void main(String[] args) {
-        String s = "aabb";
-        System.out.println(firstUniqChar(s));
+        int n = 2;
+        System.out.println(isHappy(n));
     }
 }
