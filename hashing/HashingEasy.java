@@ -121,4 +121,43 @@ public class HashingEasy {
         }
         return true;
     }
+
+    // https://leetcode.com/problems/find-the-difference/description/
+    public static char findTheDifference(String s, String t) {
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            hashMap.put(s.charAt(i), hashMap.getOrDefault(s.charAt(i), 0) + 1);
+        }
+
+        for (char c : t.toCharArray()) {
+            if (!hashMap.containsKey(c) || hashMap.get(c) == 0) {
+                return c;
+            }
+            hashMap.put(c, hashMap.get(c) - 1);
+        }
+
+        System.out.println(hashMap);
+
+        return ' ';
+    }
+
+    public static char findTheDifference1(String s, String t) {
+        int[] count = new int[26];
+
+        // Count each character in s
+        for (char c : s.toCharArray()) {
+            count[c - 'a']++;
+        }
+
+        // Subtract counts using characters from t
+        for (char c : t.toCharArray()) {
+            count[c - 'a']--;
+            if (count[c - 'a'] < 0) {
+                return c; // This is the extra character
+            }
+        }
+
+        return ' '; // Should never reach here if input is valid
+    }
+
 }

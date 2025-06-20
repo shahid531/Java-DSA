@@ -1,9 +1,9 @@
-import static hashing.HashingEasy.isIsomorphic;
+import static hashing.HashingEasy.findTheDifference;
 
 public class Main {
     public static void main(String[] args) {
-        String s = "egg";
-        String t = "add";
-        System.out.println(isIsomorphic(s, t));
+        String s = "aabbcc";
+        String t = "abcbacc";
+        System.out.println(findTheDifference(s, t));
     }
 }
