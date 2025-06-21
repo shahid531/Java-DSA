@@ -1,9 +1,6 @@
 package hashing;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class HashingEasy {
     // https://leetcode.com/problems/two-sum/description/
@@ -158,6 +155,38 @@ public class HashingEasy {
         }
 
         return ' '; // Should never reach here if input is valid
+    }
+
+    // https://leetcode.com/problems/keyboard-row/description/
+    public static String[] findWords(String[] words) {
+        Map<Character, Integer> charRowMap = new HashMap<>();
+        String[] rows = {
+                "qwertyuiop",
+                "asdfghjkl",
+                "zxcvbnm"
+        };
+        for (int i = 0; i < rows.length; i++) {
+            for (char c : rows[i].toCharArray()) {
+                charRowMap.put(c, i);
+            }
+        }
+        List<String> result = new ArrayList<>();
+        for (String word : words) {
+            String lower = word.toLowerCase();
+            boolean sameRow = true;
+            int row = charRowMap.get(lower.charAt(0));
+
+            for (int i = 1; i < lower.length(); i++) {
+                if (charRowMap.get(lower.charAt(i)) != row) {
+                    sameRow = false;
+                    break;
+                }
+            }
+            if (sameRow) {
+                result.add(word);
+            }
+        }
+        return result.toArray(new String[0]);
     }
 
 }

@@ -1,9 +1,11 @@
-import static hashing.HashingEasy.findTheDifference;
+import java.util.Arrays;
+
+import static hashing.HashingEasy.findWords;
 
 public class Main {
     public static void main(String[] args) {
-        String s = "aabbcc";
-        String t = "abcbacc";
-        System.out.println(findTheDifference(s, t));
+        String[] s = {"Hello", "Alaska", "Dad", "Peace"};
+
+        System.out.println(Arrays.toString(findWords(s)));
     }
 }
