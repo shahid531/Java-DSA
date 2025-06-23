@@ -1,10 +1,10 @@
-import static hashing.HashingEasy.wordPattern;
+import static hashing.HashingEasy.countWords;
 
 public class Main {
     public static void main(String[] args) {
-        String pattern = "abba";
-        String s = "dog cat cat dog";
+        String[] words1 = {"a", "ab"};
+        String[] words2 = {"a", "a", "a", "ab"};
 
-        System.out.println(wordPattern(pattern, s));
+        System.out.println(countWords(words1, words2));
     }
 }

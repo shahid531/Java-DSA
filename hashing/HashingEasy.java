@@ -225,4 +225,21 @@ public class HashingEasy {
         return true;
     }
 
+    // https://leetcode.com/problems/count-common-words-with-one-occurrence/description/
+    public static int countWords(String[] words1, String[] words2) {
+        int count = 0;
+        Map<String, Integer> track = new HashMap<>();
+        for (int i = 0; i < words1.length; i++) {
+            track.put(words1[i], track.getOrDefault(words1[i], 0) + 1);
+        }
+        for (int i = 0; i < words2.length; i++) {
+            track.put(words2[i], track.getOrDefault(words2[i], 0) + 1);
+        }
+        for (String s : words2) {
+            if (track.get(s) == 2) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
