@@ -1,10 +1,15 @@
-import static hashing.HashingEasy.countWords;
+import java.util.List;
+
+import static hashing.HashingMedium.groupAnagrams;
 
 public class Main {
     public static void main(String[] args) {
-        String[] words1 = {"a", "ab"};
-        String[] words2 = {"a", "a", "a", "ab"};
+        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
 
-        System.out.println(countWords(words1, words2));
+        List<List<String>> output = groupAnagrams(strs);
+
+        for (List<String> o : output) {
+            System.out.println(o);
+        }
     }
 }
