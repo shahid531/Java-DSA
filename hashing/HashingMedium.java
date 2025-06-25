@@ -19,4 +19,19 @@ public class HashingMedium {
 
         return new ArrayList<>(map.values());
     }
+
+    // https://leetcode.com/problems/top-k-frequent-elements/description/
+    public static int[] topKFrequent(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+        }
+        List<Map.Entry<Integer, Integer>> list = new ArrayList<>(map.entrySet());
+        list.sort((o1, o2) -> o2.getValue() - o1.getValue());
+        int[] result = new int[k];
+        for (int i = 0; i < k; i++) {
+            result[i] = list.get(i).getKey();
+        }
+        return result;
+    }
 }

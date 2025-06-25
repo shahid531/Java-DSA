@@ -1,15 +1,11 @@
-import java.util.List;
+import java.util.Arrays;
 
-import static hashing.HashingMedium.groupAnagrams;
+import static hashing.HashingMedium.topKFrequent;
 
 public class Main {
     public static void main(String[] args) {
-        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
-
-        List<List<String>> output = groupAnagrams(strs);
-
-        for (List<String> o : output) {
-            System.out.println(o);
-        }
+        int[] nums = {1, 1, 1, 2, 2, 3};
+        int k = 2;
+        System.out.println(Arrays.toString(topKFrequent(nums, k)));
     }
 }
