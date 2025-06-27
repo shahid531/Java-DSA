@@ -3,6 +3,8 @@ package hashing;
 import java.util.*;
 
 public class HashingMedium {
+
+    // https://leetcode.com/problems/group-anagrams/description/
     public static List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
 
@@ -33,5 +35,23 @@ public class HashingMedium {
             result[i] = list.get(i).getKey();
         }
         return result;
+    }
+
+    // https://leetcode.com/problems/subarray-sum-equals-k/description/
+    public static int subarraySum(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1);
+        int sum = 0;
+        int count = 0;
+        for (int num : nums) {
+            sum += num;
+            if (map.containsKey(sum - k)) {
+                count += map.get(sum - k);
+            }
+
+            map.put(sum, map.getOrDefault(sum, 0) + 1);
+        }
+        System.out.println(map);
+        return count;
     }
 }
