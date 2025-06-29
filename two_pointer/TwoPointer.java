@@ -7,7 +7,7 @@ public class TwoPointer {
         while (left < right) {
             int sum = numbers[left] + numbers[right];
             if (sum == target) {
-                return new int[]{left+1,right+1};
+                return new int[]{left + 1, right + 1};
             } else if (sum < target) {
                 left++;
             } else {
@@ -15,5 +15,18 @@ public class TwoPointer {
             }
         }
         return new int[]{-1, -1};
+    }
+
+    // https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+    public static int removeDuplicates(int[] nums) {
+        if (nums.length == 0) return 0;
+        int i = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[j] != nums[i]) {
+                i++;
+                nums[i] = nums[j];
+            }
+        }
+        return i + 1;
     }
 }
