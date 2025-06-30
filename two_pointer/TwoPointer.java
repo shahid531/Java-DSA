@@ -1,5 +1,7 @@
 package two_pointer;
 
+import java.util.Arrays;
+
 public class TwoPointer {
     public static int[] twoSum(int[] numbers, int target) {
         int left = 0;
@@ -28,5 +30,21 @@ public class TwoPointer {
             }
         }
         return i + 1;
+    }
+
+    // https://leetcode.com/problems/move-zeroes/description/
+    public static void moveZeroes(int[] nums) {
+        int left = 0;
+        for (int right = 0; right < nums.length; right++) {
+            if (nums[right] != 0) {
+                if (left != right) {
+                    int temp = nums[left];
+                    nums[left] = nums[right];
+                    nums[right] = temp;
+                }
+                left++;
+            }
+        }
+        System.out.println(Arrays.toString(nums));
     }
 }
