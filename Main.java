@@ -1,8 +1,8 @@
-import static two_pointer.TwoPointer.moveZeroes;
+import static two_pointer.TwoPointer.maxArea;
 
 public class Main {
     public static void main(String[] args) {
-        int[] nums = {0,1,0,3,12};
-        moveZeroes(nums);
+        int[] heights = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        System.out.println(maxArea(heights));
     }
 }
