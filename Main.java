@@ -1,8 +1,9 @@
-import static two_pointer.TwoPointer.isPalindrome;
+import static two_pointer.TwoPointer.merge;
 
 public class Main {
     public static void main(String[] args) {
-        String str = "A man, a plan, a canal: Panama";
-        System.out.println(isPalindrome(str));
+        int[] arr1 = {1, 2, 3, 0, 0, 0};
+        int[] arr2 = {2, 5, 6};
+        merge(arr1, 3, arr2, 3);
     }
 }
