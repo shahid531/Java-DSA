@@ -1,15 +1,9 @@
-import java.util.List;
-
-import static two_pointer.TwoPointer.threeSum;
+import static sliding_window.SlidingWindow.findMaxAverage;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {-1, 0, 1, 2, -1, -4};
-        threeSum(arr1);
-
-        List<List<Integer>> triplets = threeSum(arr1);
-        for (List<Integer> triplet : triplets) {
-            System.out.println(triplet);
-        }
+        int[] arr1 = {1, 12, -5, -6, 50, 3};
+        int k = 4;
+        System.out.println(findMaxAverage(arr1, k));
     }
 }
