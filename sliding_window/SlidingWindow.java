@@ -1,5 +1,6 @@
 package sliding_window;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,6 +18,7 @@ public class SlidingWindow {
         return maxSum / k;
     }
 
+    // https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
     public static int lengthOfLongestSubstring(String s) {
         int left = 0;
         int maxLength = 0;
@@ -33,5 +35,31 @@ public class SlidingWindow {
             maxLength = Math.max(maxLength, i - left + 1);
         }
         return maxLength;
+    }
+
+    public static boolean checkInclusion(String s1, String s2) {
+        if (s1.length() > s2.length()) return false;
+
+        int[] s1Count = new int[26]; // frequency map for s1
+        int[] s2Count = new int[26]; // frequency map for s2 sliding window
+
+        // Fill frequency for s1 and first window of s2
+        for (int i = 0; i < s1.length(); i++) {
+            s1Count[s1.charAt(i) - 'a']++;
+            s2Count[s2.charAt(i) - 'a']++;
+        }
+
+        // Compare the first window
+        if (Arrays.equals(s1Count, s2Count)) return true;
+
+        // Slide the window through s2
+        for (int i = s1.length(); i < s2.length(); i++) {
+            s2Count[s2.charAt(i) - 'a']++; // add new character
+            s2Count[s2.charAt(i - s1.length()) - 'a']--; // remove old character
+
+            if (Arrays.equals(s1Count, s2Count)) return true;
+        }
+
+        return false;
     }
 }
