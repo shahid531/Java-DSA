@@ -1,9 +1,9 @@
-import static sliding_window.SlidingWindow.checkInclusion;
+import static sliding_window.SlidingWindow.minSubArrayLen;
 
 public class Main {
     public static void main(String[] args) {
-        String s1 = "ab";
-        String s2 = "eidbaooo";
-        System.out.println(checkInclusion(s1, s2));
+        int[] arr1 = {2, 3, 1, 2, 4, 3};
+        int target = 7;
+        System.out.println(minSubArrayLen(target, arr1));
     }
 }
