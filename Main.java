@@ -1,9 +1,9 @@
-import static sliding_window.SlidingWindow.minSubArrayLen;
+import static sliding_window.SlidingWindow.characterReplacement;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {2, 3, 1, 2, 4, 3};
-        int target = 7;
-        System.out.println(minSubArrayLen(target, arr1));
+        String s = "ABAB";
+        int k = 2;
+        System.out.println(characterReplacement(s, k));
     }
 }

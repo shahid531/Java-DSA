@@ -80,4 +80,29 @@ public class SlidingWindow {
         }
         return (minLength == Integer.MAX_VALUE) ? 0 : minLength;
     }
+
+    // https://leetcode.com/problems/longest-repeating-character-replacement/description/
+    public static int characterReplacement(String s, int k) {
+        int[] count = new int[26];
+        int left = 0;
+        int maxFreq = 0;
+        int maxLength = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+            count[s.charAt(right) - 'A']++;
+            maxFreq = Math.max(maxFreq, count[s.charAt(right) - 'A']);
+
+            // If window is invalid, shrink from the left
+            while ((right - left + 1) - maxFreq > k) {
+                count[s.charAt(left) - 'A']--;
+                left++;
+            }
+
+            // Update max length
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+
+        return maxLength;
+    }
+
 }
