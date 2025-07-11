@@ -1,8 +1,6 @@
 package sliding_window;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class SlidingWindow {
     public static double findMaxAverage(int[] nums, int k) {
@@ -103,6 +101,38 @@ public class SlidingWindow {
         }
 
         return maxLength;
+    }
+
+    // https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
+    public static List<Integer> findAnagrams(String s, String p) {
+        List<Integer> result = new ArrayList<>();
+
+        if (s.length() < p.length()) return result;
+
+        int[] pCount = new int[26];
+        int[] window = new int[26];
+
+        // Count frequency of characters in p
+        for (char c : p.toCharArray()) {
+            pCount[c - 'a']++;
+        }
+
+        // Sliding window
+        for (int i = 0; i < s.length(); i++) {
+            window[s.charAt(i) - 'a']++;
+
+            // If window size > p length, remove leftmost character
+            if (i >= p.length()) {
+                window[s.charAt(i - p.length()) - 'a']--;
+            }
+
+            // Compare window with p
+            if (Arrays.equals(pCount, window)) {
+                result.add(i - p.length() + 1);
+            }
+        }
+
+        return result;
     }
 
 }
