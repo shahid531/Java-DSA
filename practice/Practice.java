@@ -1,22 +1,26 @@
 package practice;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
 
 public class Practice {
-    public static int firstUniqChar(String s) {
-        Map<Character, Integer> map = new HashMap<>();
+    public static boolean isHappy(int n) {
+        HashSet<Integer> set = new HashSet<>();
+        while (n != 1) {
+            if (set.contains(n)) return false;
 
-        for (int i = 0; i < s.length(); i++) {
-            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
+            set.add(n);
+            n = sumOfDigitsSquares(n);
         }
+        return true;
+    }
 
-        for (int i = 0; i < s.length(); i++) {
-            if (map.get(s.charAt(i)) == 1) {
-                return i;
-            }
+    public static int sumOfDigitsSquares(int n) {
+        int sum = 0;
+        while (n > 0) {
+            int digit = n % 10;
+            sum += digit * digit;
+            n /= 10;
         }
-        System.out.println(map);
-        return -1;
+        return sum;
     }
 }

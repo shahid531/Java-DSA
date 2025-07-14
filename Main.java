@@ -1,8 +1,7 @@
-import static practice.Practice.firstUniqChar;
+import static practice.Practice.isHappy;
 
 public class Main {
     public static void main(String[] args) {
-        String s = "aabb";
-        System.out.println(firstUniqChar(s));
+        System.out.println(isHappy(19));
     }
 }
