@@ -1,9 +1,9 @@
-import static practice.Practice.isIsomorphic;
+import static practice.Practice.findTheDifference;
 
 public class Main {
     public static void main(String[] args) {
-        String s = "egg";
-        String t = "add";
-        System.out.println(isIsomorphic(s, t));
+        String s = "abcd";
+        String t = "abcde";
+        System.out.println(findTheDifference(s, t));
     }
 }
