@@ -3,21 +3,15 @@ package practice;
 import java.util.HashMap;
 
 public class Practice {
-    public static char findTheDifference(String s, String t) {
-        HashMap<Character, Integer> hashMap = new HashMap<>();
-        for (int i = 0; i < s.length(); i++) {
-            hashMap.put(s.charAt(i), hashMap.getOrDefault(s.charAt(i), 0) + 1);
-        }
-
-        for (char c : t.toCharArray()) {
-            if (!hashMap.containsKey(c) || hashMap.get(c) == 0) {
-                return c;
+    public static int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int cm = target - nums[i];
+            if (hashMap.containsKey(cm)) {
+                return new int[]{hashMap.get(cm), i};
             }
-            hashMap.put(c, hashMap.get(c) - 1);
+            hashMap.put(nums[i], i);
         }
-
-        System.out.println(hashMap);
-
-        return ' ';
+        return new int[]{};
     }
 }
